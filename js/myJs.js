@@ -84,3 +84,4 @@ $('#yes').click(function() {
                
             })
         }
+                })
