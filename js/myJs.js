@@ -100,7 +100,7 @@ $('#yes').click(function() {
         html: true,
         width: 900,
         padding: '3em',
-        html: "<input type='text' class='form-control' id='txtReason' onmousemove=textGenerate()  placeholder='Whyyy'>",
+        html: "<input type='text' class='form-control' id='txtReason' onmousemove=textGenerate()  placeholder='Phải chọn đó -.- Phải chọn đó -.- Phải chọn đó -.- Phải chọn đó -.- Phải chọn đó -.- Phải chọn đó -.- Phải chọn đó -.- Phải chọn đó -.- Phải chọn đó '>",
         background: '#fff url("img/iput-bg.jpg")',
         backdrop: `
               rgba(0,0,123,0.4)
@@ -109,12 +109,12 @@ $('#yes').click(function() {
               no-repeat
             `,
         showCancelButton: true,
-        cancelButtonText: "Y e s <33333",
+        cancelButtonText: "Cũng là yes nhưng ô màu vàng <3",
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         confirmButtonColor: '#fe8a71',
         cancelButtonColor: '#f6cd61',
-        confirmButtonText: 'Cũng là yes nhưng ô màu vàng <3'
+        confirmButtonText: 'Y e s <33333'
     }).then((result) => {
         if (result.value) {
             Swal.fire({
