@@ -14,11 +14,11 @@ function firstQuestion(){
     
     $('.content').hide();
     Swal.fire({
-        title: 'Hi Trúc <3',
-        text: ' Đây là quà Va lung tung của Khoa dành cho Trúc ',
+        title: 'He luu cậu!',
+        text: 'Tớ có điều này muốn hỏi cậu nhớ phải trả lời thật lòng nhaaa.',
         imageUrl: 'img/cuteCat.jpg',
         imageWidth: 300,
-        imageHeight: 350,
+        imageHeight: 300,
         background: '#fff url("img/iput-bg.jpg")',
         imageAlt: 'Custom image',
       }).then(function(){
@@ -39,7 +39,7 @@ function firstQuestion(){
     $('#yes').css("left", leftNo);
     $('#yes').css("top", topNO);
 }
-// move random button position
+// move random button póition
 function moveButton() {
     var audio = new Audio('sound/Swish1.mp3');
     audio.play();
@@ -70,18 +70,62 @@ $('#no').click(() => {
         switchButton();
 })
 
+// generate text in input
+function textGenerate() {
+    var n = "";
+    var text = " Tại vì cậu đẹp trai vl :<<<<<<< ";
+    var a = Array.from(text);
+    var textVal = $('#txtReason').val() ? $('#txtReason').val() : "";
+    var count = textVal.length;
+    if (count > 0) {
+        for (let i = 1; i <= count; i++) {
+            n = n + a[i];
+            if (i == text.length + 1) {
+                $('#txtReason').val("");
+                n = "";
+                break;
+            }
+        }
+    }
+    $('#txtReason').val(n);
+    setTimeout("textGenerate()", 1);
+}
+
 // show popup
 $('#yes').click(function() {
     var audio = new Audio('sound/tick.mp3');
     audio.play();
     Swal.fire({
+        title: 'Nói cho tớ lí do cậu thích tớ đi :vvvv',
+        html: true,
+        width: 900,
+        padding: '3em',
+        html: "<input type='text' class='form-control' id='txtReason' onmousemove=textGenerate()  placeholder='Whyyy'>",
+        background: '#fff url("img/iput-bg.jpg")',
+        backdrop: `
+              rgba(0,0,123,0.4)
+              url("img/giphy2.gif")
+              left top
+              no-repeat
+            `,
+        showCancelButton: true,
+        cancelButtonText: "Thôi ngại lém :<<",
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonColor: '#fe8a71',
+        cancelButtonColor: '#f6cd61',
+        confirmButtonText: 'Gửi cho tớ <3'
+    }).then((result) => {
+        
+            Swal.fire({
                 width: 900,
-                confirmButtonText: 'Bái baiiiiiii <3',
+                confirmButtonText: 'Okiiiii lun <3',
                 background: '#fff url("img/iput-bg.jpg")',
-                title: 'Khoa biết Trúc thương Khoa nhất mà <3',
-                text: "Giờ thì mau cái đít inbox nói thương tui đi con heo kia, phải tặng quà lại tui đó nghe chưa :3",
+                title: 'Tớ biết mà ^^ Yêu cậu 300.000',
+                text: "Tối nay tớ qua đón cậu đi chơi nhaaaaaaaaa :v Còn giờ thì chờ gì nữa mà ko inbox cho tớ đi nàoooooo",
                 confirmButtonColor: '#83d0c9',
-               
+                
             })
-        }
-                })
+        
+    })
+})
